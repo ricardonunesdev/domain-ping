@@ -10,7 +10,7 @@ function pingDomain(domain) {
     return new Promise((resolve, reject) => {
         dns.lookup(domain, (error, ip, family) => {
             if (error) { return reject(error); }
-            ping.promises.probe(ip, (isAlive) => {
+            ping.promise.probe(ip, (isAlive) => {
                 console.log(domain+' - '+ip+' - '+(isAlive ? 'up' : 'down'));
                 return resolve();
             });
