@@ -9,7 +9,7 @@
     "url": "https://github.com/ricardonunesdev"
   },
   "dependencies": {
-    "dns": "^0.2.2",
+    "bluebird": "^3.5.0",
     "ping": "^0.2.2"
   },
   "scripts": {
