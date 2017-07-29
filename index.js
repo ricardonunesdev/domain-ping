@@ -11,7 +11,7 @@ function pingDomain(domain) {
         dns.lookup(domain, (error, ip, family) => {
             if (error) { return reject(error); }
             ping.sys.probe(ip, (isAlive) => {
-                console.log(domain+' - '+ip+' - '+(isAlive ? 'up' : 'down'));
+                console.log(ip+' - '+domain+' - '+(isAlive ? 'up' : 'maybe down'));
                 return resolve();
             });
         });
