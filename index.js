@@ -3,6 +3,7 @@
 let dns = require('dns');
 let ping = require('ping');
 let Promise = require('bluebird');
+let pad = require('pad');
 
 let domains = require('./domains');
 
@@ -11,7 +12,7 @@ function pingDomain(domain) {
         dns.lookup(domain, (error, ip, family) => {
             if (error) { return reject(error); }
             ping.sys.probe(ip, (isAlive) => {
-                console.log(ip+' - '+domain+' - '+(isAlive ? 'up' : 'maybe down'));
+                console.log(pad(ip, 15)+' - '+domain+' - '+(isAlive ? 'up' : 'maybe down'));
                 return resolve();
             });
         });
