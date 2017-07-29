@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-domain-pinger",
+  "version": "0.0.1",
+  "description": "NodeJS script that pings a list of domains",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Ricardo Nunes",
+    "url": "https://github.com/ricardonunesdev"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardonunesdev/nodejs-domain-pinger.git"
+  },
+  "homepage": "https://github.com/ricardonunesdev/nodejs-domain-pinger#readme",
+  "bugs": {
+    "url": "https://github.com/ricardonunesdev/nodejs-domain-pinger/issues"
+  }
+}
