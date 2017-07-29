@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
+    "pad": "^1.1.0",
     "ping": "^0.2.2"
   },
   "scripts": {
