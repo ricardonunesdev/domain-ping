@@ -8,6 +8,10 @@
     "name": "Ricardo Nunes",
     "url": "https://github.com/ricardonunesdev"
   },
+  "dependencies": {
+    "dns": "^0.2.2",
+    "ping": "^0.2.2"
+  },
   "scripts": {
     "start": "node index.js"
   },
