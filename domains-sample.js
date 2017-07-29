@@ -1,5 +1,7 @@
 'use strict';
 
 module.exports = [
-    'google.com'
+    'google.com',
+    'bing.com',
+    'yahoo.com'
 ];
