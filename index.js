@@ -9,17 +9,9 @@ let fs = require('fs');
 
 let domains = fs.readFileSync('domains.txt').toString().split("\n");
 
-let ouputData = (data) => {
-    // console.log(
-    //     pad(data.domain, 50) + ' | ' +
-    //     pad(data.ip, 20) + ' | ' +
-    //     pad(data.ping, 10) + ' | ' +
-    //     pad(''+data.status, 10)
-    // );
-    console.log(data.domain+"\t"+data.ip+"\t"+data.ping+"\t"+data.status);
-};
+let ouputData = (data) => { console.log(data.domain+"\t"+data.ip+"\t"+data.ping+"\t"+data.status); };
 
-function pingDomain(data) {
+let pingDomain = (data) => {
     return new Promise((resolve, reject) => {
         if (data.tries >= 5) {
             ouputData(data);
@@ -64,10 +56,7 @@ function pingDomain(data) {
             });
         });
     });
-}
-
-// console.log(pad('Domain', 50)+' | '+pad('Ip', 20)+' | '+pad('Ping', 10)+' | '+pad('Status', 10));
-// console.log('-'.repeat(100));
+};
 
 Promise.map(domains, (domain) => {
         let data = { domain: domain, ip: '', ping: '', status: '', tries: 0 };
