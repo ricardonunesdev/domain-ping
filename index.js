@@ -9,8 +9,6 @@ let fs = require('fs');
 
 let domains = fs.readFileSync('domains.txt').toString().split("\n");
 
-// TODO: Request url looking for status 200
-
 function pingDomain(domain) {
     return new Promise((resolve, reject) => {
         dns.lookup(domain, (error, ip, family) => {
