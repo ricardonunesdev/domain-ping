@@ -47,6 +47,10 @@ function pingDomain(data) {
                                 ouputData(data);
                                 return resolve();
                             }
+
+                            data.status = response.statusCode;
+                            ouputData(data);
+                            return resolve();
                         });
                     }
 
