@@ -9,7 +9,6 @@ let fs = require('fs');
 
 let domains = fs.readFileSync('domains.txt').toString().split("\n");
 
-let debug = (msg) => { console.log(msg); };
 let ouputData = (data) => {
     console.log(
         pad(data.domain, 50) + ' | ' +
@@ -40,11 +39,15 @@ function pingDomain(data) {
 
                 data.ping = (isAlive ? 'yes' : 'no');
 
-                request('http://'+data.domain, (error2, response, body) => {
-                    if (error2) {
-                        data.status = 'failed';
-                        ouputData(data);
-                        return resolve();
+                request('http://'+data.domain, (error, response, body) => {
+                    if (error) {
+                        request('https://'+data.domain, (error, response, body) => {
+                            if (error) {
+                                data.status = 'failed';
+                                ouputData(data);
+                                return resolve();
+                            }
+                        });
                     }
 
                     data.status = response.statusCode;
