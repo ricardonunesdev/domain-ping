@@ -16,7 +16,7 @@ function pingDomain(domain) {
             ping.sys.probe(ip, (isAlive) => {
                 request('http://'+domain, (error2, response, body) => {
                     if (error2) { return reject(error2); }
-                    console.log(pad(ip, 20)+' | '+pad((isAlive ? 'yes' : 'no'), 10)+' | '+pad(''+response.statusCode, 10)+' | '+domain);
+                    console.log(pad(domain, 50)+' | '+pad(ip, 20)+' | '+pad((isAlive ? 'yes' : 'no'), 10)+' | '+pad(''+response.statusCode, 10));
                     return resolve();
                 });
             });
@@ -24,7 +24,7 @@ function pingDomain(domain) {
     });
 }
 
-console.log(pad('Ip', 20)+' | '+pad('Ping', 10)+' | '+pad('Status', 10)+' | '+'Domain');
+console.log(pad('Domain', 50)+' | '+pad('Ip', 20)+' | '+pad('Ping', 10)+' | '+pad('Status', 10));
 console.log('-'.repeat(100));
 
 Promise.map(domains, (domain) => {
