@@ -17,14 +17,13 @@ function pingDomains(domains) {
 
         let domain = domains.shift();
 
-        debug('DNS lookup for '+domain);
         dns.lookup(domain, { family: 4 }, (error, ip, family) => {
-            if (error) { return reject(error); }
+            if (error) {
+                console.log(pad(domain, 50)+' | '+pad('not found', 20)+' | '+pad('skipped', 10)+' | '+pad('skipped', 10));
+                return resolve(pingDomains(domains));
+            }
 
-            debug('Ping for '+ip);
             ping.sys.probe(ip, (isAlive) => {
-
-                debug('Request for '+'http://'+domain);
                 request('http://'+domain, (error2, response, body) => {
                     if (error2) { return reject(error2); }
 
@@ -39,7 +38,4 @@ function pingDomains(domains) {
 console.log(pad('Domain', 50)+' | '+pad('Ip', 20)+' | '+pad('Ping', 10)+' | '+pad('Status', 10));
 console.log('-'.repeat(100));
 
-pingDomains(domains)
-    .then(() => {
-        console.log('Done');
-    });
+pingDomains(domains).then(() => { console.log('Done'); });
