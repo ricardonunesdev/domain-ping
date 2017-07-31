@@ -3,7 +3,6 @@
 let dns = require('dns');
 let ping = require('ping');
 let Promise = require('bluebird');
-let pad = require('pad');
 let request = require('request');
 let fs = require('fs');
 
