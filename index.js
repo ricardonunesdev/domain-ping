@@ -59,8 +59,10 @@ let pingDomain = (data) => {
 };
 
 Promise.map(domains, (domain) => {
-        let data = { domain: domain, ip: '', ping: '', status: '', tries: 0 };
-        return pingDomain(data);
+        if (domain && (typeof domain === 'string') && (domain.length > 0)) {
+            let data = { domain: domain, ip: '', ping: '', status: '', tries: 0 };
+            return pingDomain(data);
+        }
     })
     .then(() => {
         // console.log('Done');
