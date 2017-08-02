@@ -6,9 +6,10 @@ let Promise = require('bluebird');
 let request = require('request');
 let fs = require('fs');
 
-let domains = fs.readFileSync('domains.txt').toString().split("\n");
-
+let uniq = (arr) => { return Array.from(new Set(arr)); };
 let ouputData = (data) => { console.log(data.domain+"\t"+data.ip+"\t"+data.ping+"\t"+data.status); };
+
+let domains = uniq(fs.readFileSync('domains.txt').toString().split("\n"));
 
 let pingDomain = (data) => {
     return new Promise((resolve, reject) => {
@@ -62,5 +63,5 @@ Promise.map(domains, (domain) => {
         return pingDomain(data);
     })
     .then(() => {
-        console.log('Done');
+        // console.log('Done');
     });
