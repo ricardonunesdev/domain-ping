@@ -8,6 +8,7 @@ let fs = require('fs');
 
 let uniq = (arr) => { return Array.from(new Set(arr)); };
 let ouputData = (data) => { console.log(data.domain+"\t"+data.ip+"\t"+data.ping+"\t"+data.status); };
+let debug = (msg) => { console.log(msg); };
 
 let domains = uniq(fs.readFileSync('domains.txt').toString().split("\n"));
 
@@ -58,6 +59,8 @@ let pingDomain = (data) => {
     });
 };
 
+debug('Pinging '+domains.length+' domains');
+
 Promise.map(domains, (domain) => {
         if (domain && (typeof domain === 'string') && (domain.length > 0)) {
             let data = { domain: domain, ip: '', ping: '', status: '', tries: 0 };
@@ -65,5 +68,5 @@ Promise.map(domains, (domain) => {
         }
     })
     .then(() => {
-        // console.log('Done');
+        debug('Done');
     });
