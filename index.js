@@ -59,7 +59,7 @@ let pingDomain = (data) => {
     });
 };
 
-debug('Pinging '+domains.length+' domains');
+debug('Pinging '+domains.length+' domain(s)'+"\n");
 
 Promise.map(domains, (domain) => {
         if (domain && (typeof domain === 'string') && (domain.length > 0)) {
@@ -68,5 +68,5 @@ Promise.map(domains, (domain) => {
         }
     })
     .then(() => {
-        debug('Done');
+        debug("\n"+'Done');
     });
