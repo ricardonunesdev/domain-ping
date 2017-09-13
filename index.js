@@ -2,15 +2,17 @@
 
 const Promise = require('bluebird');
 const ping = require('ping');
+const request = require('request');
+
 const dns = require('dns');
 
 const getDomainIp = (domain) => {
     return new Promise((resolve, reject) => {
         dns.lookup(domain, { family: 4 }, (error, ip, family) => {
             if (error) {
-                return resolve({ success: false, error: error });
+                return reject(error);
             }
-            return resolve({ success: true, ip: ip, family: family });
+            return resolve(ip);
         });
     });
 };
@@ -18,8 +20,31 @@ const getDomainIp = (domain) => {
 const pingIp = (ip) => {
     return new Promise((resolve, reject) => {
         ping.sys.probe(ip, (alive) => {
-            return resolve({ success: true, alive: alive });
+            return resolve(alive);
         });
+    });
+};
+
+const requestUrl = (url) => {
+    return new Promise((resolve, reject) => {
+        request(url, (error, response, body) => {
+            if (error) {
+                return reject(error);
+            }
+            return resolve(response.statusCode);
+        });
+    });
+};
+
+const requestDomain = (domain) => {
+    return new Promise((resolve, reject) => {
+        requestUrl('http://'+domain)
+            .then(resolve)
+            .catch((error) => {
+                requestUrl('https://'+domain)
+                    .then(resolve)
+                    .catch(reject);
+            })
     });
 };
 
@@ -30,29 +55,23 @@ const domainPing = (domain) => {
         };
 
         getDomainIp(domain)
-            .then((res) => {
-                if (res.success) {
-                    data.ip = res;
-                    return pingIp(res.ip);
-                } else {
-                    data.success = false;
-                    data.error = res.error;
-                    return reject(data);
-                }
+            .then((ip) => {
+                data.ip = ip;
+                return pingIp(ip);
             })
-            .then((res) => {
-                if (res.success) {
-                    data.ping = res;
-                    data.success = true;
-                    return resolve(data);
-                } else {
-                    data.success = false;
-                    data.error = res.error;
-                    return reject(data);
-                }
+            .then((alive) => {
+                data.ping = alive;
+                return requestDomain(domain);
+            })
+            .then((statusCode) => {
+                data.statusCode = statusCode;
+                data.success = true;
+                return resolve(data);
             })
             .catch((error) => {
-                return reject({ success: false, error: error });
+                data.success = false;
+                data.error = error;
+                return reject(data);
             });
     });
 };
