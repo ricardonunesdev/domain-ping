@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=dev && node index.js",
-    "test": "mocha --recursive --timeout 10000"
+    "test": "mocha --recursive --timeout 30000"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
