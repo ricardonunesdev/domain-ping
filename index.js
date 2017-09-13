@@ -1,6 +1,6 @@
 'use strict';
 
-const domainPing = require('./index');
+const domainPing = require('./domain-ping');
 
 domainPing('github.com')
     .then((res) => {
