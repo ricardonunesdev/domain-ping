@@ -73,6 +73,7 @@ const domainPing = (domain) => {
             .then((statusCode) => {
                 data.online = (statusCode === 200);
                 data.statusCode = statusCode;
+
                 data.success = true;
                 return resolve(data);
             })
