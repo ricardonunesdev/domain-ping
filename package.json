@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-domain-pinger",
+  "name": "domain-ping",
   "version": "0.0.1",
   "description": "NodeJS script that pings a list of domains",
   "main": "index.js",
