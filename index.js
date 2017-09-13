@@ -51,7 +51,7 @@ const requestDomain = (domain) => {
 const domainPing = (domain) => {
     return new Promise((resolve, reject) => {
         let data = {
-            success: null
+            domain: domain
         };
 
         getDomainIp(domain)
@@ -64,6 +64,7 @@ const domainPing = (domain) => {
                 return requestDomain(domain);
             })
             .then((statusCode) => {
+                data.online = (statusCode === 200);
                 data.statusCode = statusCode;
                 data.success = true;
                 return resolve(data);
