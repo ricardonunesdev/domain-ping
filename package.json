@@ -9,20 +9,25 @@
     "email": "ricardonunesdev@gmail.com",
     "url": "https://github.com/ricardonunesdev"
   },
+  "scripts": {
+    "start": "NODE_ENV=dev && node index.js",
+    "test": "mocha --recursive --timeout 10000"
+  },
   "dependencies": {
     "bluebird": "^3.5.0",
     "is-valid-domain": "0.0.2",
     "ping": "^0.2.2",
     "request": "^2.81.0"
   },
-  "scripts": {
-    "start": "node index.js"
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
   },
+  "homepage": "https://github.com/ricardonunesdev/domain-ping#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ricardonunesdev/domain-ping.git"
   },
-  "homepage": "https://github.com/ricardonunesdev/domain-ping#readme",
   "bugs": {
     "email": "ricardonunesdev@gmail.com",
     "url": "https://github.com/ricardonunesdev/domain-ping/issues"
