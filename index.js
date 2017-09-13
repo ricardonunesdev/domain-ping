@@ -3,6 +3,7 @@
 const Promise = require('bluebird');
 const ping = require('ping');
 const request = require('request');
+const isValidDomain = require('is-valid-domain');
 
 const dns = require('dns');
 
@@ -53,6 +54,12 @@ const domainPing = (domain) => {
         let data = {
             domain: domain
         };
+
+        if (!isValidDomain(domain)) {
+            data.success = false;
+            data.error = new Error('Invalid domain name');
+            return reject(data);
+        }
 
         getDomainIp(domain)
             .then((ip) => {
