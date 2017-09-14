@@ -18,9 +18,8 @@ describe('Testing domain-ping', () => {
                     expect(res).to.have.property('success');
                     expect(res.success).to.be.false;
                     expect(res).to.have.property('error');
-                    expect(res.error).to.have.property('message');
-                    expect(res.error.message).to.be.a('string');
-                    expect(res.error.message).to.be.equal('Invalid domain name');
+                    expect(res.error).to.be.a('string');
+                    expect(res.error).to.be.equal('Invalid domain name');
                     done();
                 })
                 .catch(done);
@@ -36,9 +35,25 @@ describe('Testing domain-ping', () => {
                     expect(res).to.have.property('success');
                     expect(res.success).to.be.false;
                     expect(res).to.have.property('error');
-                    expect(res.error).to.have.property('message');
-                    expect(res.error.message).to.be.a('string');
-                    expect(res.error.message).to.be.equal('Invalid domain name');
+                    expect(res.error).to.be.a('string');
+                    expect(res.error).to.be.equal('Invalid domain name');
+                    done();
+                })
+                .catch(done);
+        });
+
+        it('should return error for domain that doesn\'t exist', (done) => {
+            domainPing('githubabc.com')
+                .then((res) => {
+                    done(Error('Expected to fail'));
+                })
+                .catch((res) => {
+                    expect(res).to.be.an('object');
+                    expect(res).to.have.property('success');
+                    expect(res.success).to.be.false;
+                    expect(res).to.have.property('error');
+                    expect(res.error).to.be.a('string');
+                    expect(res.error).to.be.equal('getaddrinfo ENOTFOUND githubabc.com');
                     done();
                 })
                 .catch(done);
