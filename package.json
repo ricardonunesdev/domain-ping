@@ -1,6 +1,6 @@
 {
   "name": "domain-ping",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A small module that attempts to ping a domain",
   "main": "domain-ping.js",
   "license": "MIT",
