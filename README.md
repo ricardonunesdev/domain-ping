@@ -1,6 +1,10 @@
 # Domain Ping
 
-A small module that attempts to ping domains by checking the following:
+[![Build Status](https://travis-ci.org/ricardonunesdev/domain-ping.svg?branch=master)](https://travis-ci.org/ricardonunesdev/domain-ping) [![Coverage Status](https://coveralls.io/repos/github/ricardonunesdev/domain-ping/badge.svg?branch=master)](https://coveralls.io/github/ricardonunesdev/domain-ping?branch=master)
+
+[![NPM](https://nodei.co/npm/domain-ping.png)](https://nodei.co/npm/domain-ping/)
+
+A small module that attempts to ping a domain by checking the following:
 
  - The domain's IP address
  - If the server is responding to pings
