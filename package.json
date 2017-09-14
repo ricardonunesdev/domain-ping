@@ -1,7 +1,8 @@
 {
   "name": "domain-ping",
   "version": "0.1.3",
-  "description": "A small module that attempts to ping a domain",
+  "description": "A small Node.js module that attempts to ping a domain",
+  "keywords": [ "domain", "ping", "dns", "http", "request", "online" ],
   "main": "domain-ping.js",
   "license": "MIT",
   "author": {
