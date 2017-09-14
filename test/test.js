@@ -48,9 +48,10 @@ describe('Testing domain-ping', () => {
 
     describe('Valid domains', () => {
 
-        it('should return correct data for github.com', (done) => {
+        it('should return correct data for google.com', (done) => {
             domainPing('google.com')
                 .then((res) => {
+                    console.log(res);
                     expect(res).to.be.an('object');
                     expect(res).to.have.property('success');
                     expect(res.success).to.be.true;
