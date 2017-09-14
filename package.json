@@ -30,7 +30,10 @@
     "mocha": "^3.5.3"
   },
   "homepage": "https://github.com/ricardonunesdev/domain-ping#readme",
-  "repository": "https://github.com/ricardonunesdev/domain-ping",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardonunesdev/domain-ping"
+  },
   "bugs": {
     "email": "ricardonunesdev@gmail.com",
     "url": "https://github.com/ricardonunesdev/domain-ping/issues"
