@@ -68,6 +68,10 @@ Where:
 $ npm test
 ```
 
+## Feedback
+
+Any bug or request should be submitted as an issue [here](https://github.com/ricardonunesdev/domain-ping/issues).
+
 ## License
 
 MIT © [Ricardo Nunes](https://github.com/ricardonunesdev)
