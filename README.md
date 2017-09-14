@@ -43,9 +43,9 @@ Where:
 
  - `domain` is the domain you requested
  - `ip` is the IP address the domain should be pointing to, as defined in the DNS server by an A record
- - `ping` is true if the server is responding to ping requests, false otherwise (false does not mean it's down, ICMP could be blocked on the firewall)
+ - `ping` is true if the server is responding to ping requests, false otherwise (false does not mean it's down, ICMP could be blocked on the server's firewall)
  - `online` is true if the server is responding to HTTP requests for the chosen domain, with status code = 200, false otherwise
- - `statusCode` is the actual status code replied by the server in the HTTP request
+ - `statusCode` is the actual status code replied by the server in the HTTP request (200, 404, 500, etc)
  - `success` is true if the entire process executed correctly, false otherwise (check Errors below)
 
 ## Errors
