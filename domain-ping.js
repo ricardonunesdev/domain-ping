@@ -75,6 +75,7 @@ const domainPing = (domain) => {
                 data.statusCode = statusCode;
 
                 data.success = true;
+                console.log(data);
                 return resolve(data);
             })
             .catch((error) => {
