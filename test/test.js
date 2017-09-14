@@ -1,7 +1,6 @@
 'use strict';
 
-const chai = require('chai');
-const expect = chai.expect;
+const expect = require('chai').expect;
 
 const domainPing = require('../domain-ping');
 
@@ -59,10 +58,36 @@ describe('Testing domain-ping', () => {
                     expect(res.ip).to.be.a('string');
                     expect(res).to.have.property('ping');
                     expect(res.ping).to.be.a('boolean');
+                    expect(res.ping).to.be.true;
                     expect(res).to.have.property('online');
                     expect(res.online).to.be.a('boolean');
+                    expect(res.online).to.be.true;
                     expect(res).to.have.property('statusCode');
                     expect(res.statusCode).to.be.a('number');
+                    expect(res.statusCode).to.be.equal(200);
+                    done();
+                })
+                .catch(done);
+        });
+
+        it('should return correct data for netflix.com (no ping)', (done) => {
+            domainPing('netflix.com')
+                .then((res) => {
+                    expect(res).to.be.an('object');
+                    expect(res).to.have.property('success');
+                    expect(res.success).to.be.true;
+                    expect(res).to.have.property('ip');
+                    expect(res.ip).to.be.a('string');
+                    expect(res).to.have.property('ping');
+                    expect(res.ping).to.be.a('boolean');
+                    expect(res.ping).to.be.false; // Firewall blocking ICMP
+                    expect(res).to.have.property('online');
+                    expect(res.online).to.be.a('boolean');
+                    expect(res.online).to.be.true;
+                    expect(res).to.have.property('statusCode');
+                    expect(res.statusCode).to.be.a('number');
+                    expect(res.statusCode).to.be.equal(200);
+                    done();
                 })
                 .catch(done);
         });
