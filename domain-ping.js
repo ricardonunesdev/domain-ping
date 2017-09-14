@@ -57,7 +57,7 @@ const domainPing = (domain) => {
 
         if (!isValidDomain(domain)) {
             data.success = false;
-            data.error = new Error('Invalid domain name');
+            data.error = 'Invalid domain name';
             return reject(data);
         }
 
