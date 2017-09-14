@@ -20,9 +20,12 @@ const getDomainIp = (domain) => {
 
 const pingIp = (ip) => {
     return new Promise((resolve, reject) => {
-        ping.sys.probe(ip, (alive) => {
-            return resolve(alive);
-        });
+        ping.promise.probe(ip)
+            .then((res) => {
+                console.log(res);
+                return resolve(res.alive);
+            })
+            .catch(reject);
     });
 };
 
