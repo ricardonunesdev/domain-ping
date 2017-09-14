@@ -1,8 +1,8 @@
 {
   "name": "domain-ping",
   "version": "0.1.0",
-  "description": "NodeJS script that pings a list of domains",
-  "main": "index.js",
+  "description": "A small module that attempts to ping domains",
+  "main": "domain-ping.js",
   "license": "MIT",
   "author": {
     "name": "Ricardo Nunes",
@@ -10,8 +10,10 @@
     "url": "https://github.com/ricardonunesdev"
   },
   "scripts": {
-    "start": "NODE_ENV=dev && node index.js",
-    "test": "mocha --recursive --timeout 30000"
+    "test": "mocha --reporter spec --recursive --timeout 30000"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
@@ -24,10 +26,7 @@
     "mocha": "^3.5.3"
   },
   "homepage": "https://github.com/ricardonunesdev/domain-ping#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ricardonunesdev/domain-ping.git"
-  },
+  "repository": "https://github.com/ricardonunesdev/domain-ping",
   "bugs": {
     "email": "ricardonunesdev@gmail.com",
     "url": "https://github.com/ricardonunesdev/domain-ping/issues"
