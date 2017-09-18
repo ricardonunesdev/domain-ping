@@ -2,7 +2,14 @@
   "name": "domain-ping",
   "version": "0.1.3",
   "description": "A small Node.js module that attempts to ping a domain",
-  "keywords": [ "domain", "ping", "dns", "http", "request", "online" ],
+  "keywords": [
+    "domain",
+    "ping",
+    "dns",
+    "http",
+    "request",
+    "online"
+  ],
   "main": "domain-ping.js",
   "license": "MIT",
   "author": {
@@ -19,7 +26,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "is-valid-domain": "0.0.2",
+    "is-valid-domain": "0.0.4",
     "ping": "^0.2.2",
     "request": "^2.81.0"
   },
