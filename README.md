@@ -1,5 +1,7 @@
 # Domain Ping
 
+[![Join the chat at https://gitter.im/ricardonunesdev/domain-ping](https://badges.gitter.im/ricardonunesdev/domain-ping.svg)](https://gitter.im/ricardonunesdev/domain-ping?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![NPM](https://nodei.co/npm/domain-ping.png)](https://nodei.co/npm/domain-ping/)
 
 [![Build Status](https://travis-ci.org/ricardonunesdev/domain-ping.svg?branch=master)](https://travis-ci.org/ricardonunesdev/domain-ping)
