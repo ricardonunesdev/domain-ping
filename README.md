@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/domain-ping.png)](https://nodei.co/npm/domain-ping/)
 
-[![Join the chat at https://gitter.im/ricardonunesdev/domain-ping](https://badges.gitter.im/ricardonunesdev/domain-ping.svg)](https://gitter.im/ricardonunesdev/domain-ping?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at Gitter](https://badges.gitter.im/ricardonunesdev/domain-ping.svg)](https://gitter.im/ricardonunesdev/domain-ping)
 
 [![Build Status](https://travis-ci.org/ricardonunesdev/domain-ping.svg?branch=master)](https://travis-ci.org/ricardonunesdev/domain-ping)
 [![Coverage Status](https://coveralls.io/repos/github/ricardonunesdev/domain-ping/badge.svg?branch=master)](https://coveralls.io/github/ricardonunesdev/domain-ping?branch=master)
