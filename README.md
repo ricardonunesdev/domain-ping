@@ -20,6 +20,18 @@ It does the following:
 
 When done, it returns an object with the gathered data (check Usage below).
 
+## Warning
+
+I'll be implementing changes as quickly as possible, if you have a bug report or feature request, please read the [Feedback](#feedback) section.
+
+Please take note that this is still a beta module.
+
+I'll ensure that `patch` (0.0.x) updates won't break your code, but `major` (x.0.0) and `minor` (0.x.0) ones might.
+
+Always check this README file before upgrading to the latest version.
+
+### [Changelog](https://github.com/ricardonunesdev/domain-ping/blob/master/CHANGELOG.md)
+
 ## Installation
 
 To install the package, run this inside your project's folder.
