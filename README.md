@@ -78,7 +78,14 @@ Where:
 
 ## Feedback
 
-All bug reports and feature requests are welcome, and should be submitted as issues [here](https://github.com/ricardonunesdev/domain-ping/issues).
+All bug reports and feature requests are welcome, and should be submitted through one of the following channels:
+
+ - Create a Github issue [here](https://github.com/ricardonunesdev/domain-ping/issues)
+ - Tweet me at [@ricardonunesdev](https://twitter.com/ricardonunesdev)
+ - Chat with me on [Gitter](https://gitter.im/ricardonunesdev/domain-ping)
+ - Send email to [ricardonunesdev@gmail.com](mailto://ricardonunesdev@gmail.com)
+
+All requests will be created as Github issues, if you don't use that channel.
 
 ## License
 
