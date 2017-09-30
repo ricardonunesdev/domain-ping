@@ -19,7 +19,7 @@ describe('Testing domain-ping', () => {
                     expect(res.success).to.be.false;
                     expect(res).to.have.property('error');
                     expect(res.error).to.be.a('string');
-                    expect(res.error).to.be.equal('Invalid domain name');
+                    expect(res.error).to.be.equal('invalid domain name ""');
                     done();
                 })
                 .catch(done);
@@ -36,7 +36,7 @@ describe('Testing domain-ping', () => {
                     expect(res.success).to.be.false;
                     expect(res).to.have.property('error');
                     expect(res.error).to.be.a('string');
-                    expect(res.error).to.be.equal('Invalid domain name');
+                    expect(res.error).to.be.equal('invalid domain name "abc123"');
                     done();
                 })
                 .catch(done);
