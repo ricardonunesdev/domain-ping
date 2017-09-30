@@ -1,6 +1,6 @@
 {
   "name": "domain-ping",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A small Node.js module that attempts to ping a domain",
   "keywords": [
     "domain",
