@@ -7,6 +7,9 @@ const isValidDomain = require('is-valid-domain');
 
 const dns = require('dns');
 
+const debug = require('debug')('domain-ping');
+const debugErr = require('debug')('domain-ping:error');
+
 const getDomainIp = (domain) => {
     return new Promise((resolve, reject) => {
         dns.lookup(domain, { family: 4 }, (error, ip, family) => {
@@ -57,7 +60,8 @@ const domainPing = (domain) => {
 
         if (!isValidDomain(domain)) {
             data.success = false;
-            data.error = 'Invalid domain name';
+            data.error = 'invalid domain name "' + domain + '"';
+            debugErr(data.error);
             return reject(data);
         }
 
@@ -74,11 +78,13 @@ const domainPing = (domain) => {
                 data.success = true;
                 data.online = (statusCode === 200);
                 data.statusCode = statusCode;
+                debug(data);
                 return resolve(data);
             })
             .catch((error) => {
                 data.success = false;
                 data.error = error.message;
+                debugErr(data.error);
                 return reject(data);
             });
     });
