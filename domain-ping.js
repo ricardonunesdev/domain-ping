@@ -39,13 +39,13 @@ const requestUrl = (url) => {
 
 const requestDomain = (domain) => {
     return new Promise((resolve, reject) => {
-        requestUrl('http://'+domain)
+        requestUrl('http://' + domain)
             .then(resolve)
             .catch((error) => {
-                requestUrl('https://'+domain)
-                    .then(resolve)
-                    .catch(reject);
+                return requestUrl('https://' + domain);
             })
+            .then(resolve)
+            .catch(reject);
     });
 };
 
@@ -71,10 +71,9 @@ const domainPing = (domain) => {
                 return requestDomain(domain);
             })
             .then((statusCode) => {
+                data.success = true;
                 data.online = (statusCode === 200);
                 data.statusCode = statusCode;
-
-                data.success = true;
                 return resolve(data);
             })
             .catch((error) => {
