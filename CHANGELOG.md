@@ -1,6 +1,15 @@
 ## Change Log
 
+### v0.1.9 (2017/09/30 11:32 +00:00)
+- [1eba8d2](https://github.com/ricardonunesdev/domain-ping/commit/1eba8d20c34599ced54ad3a6eb7d81c9a8a863bb) Added debug output (@ricardonunesdev)
+- [f9518a0](https://github.com/ricardonunesdev/domain-ping/commit/f9518a02a6fa526e56932f740084e28cd9ab7151) Changed tests because of debug (@ricardonunesdev)
+- [1cd0dec](https://github.com/ricardonunesdev/domain-ping/commit/1cd0dec586ca2f869d0f60820521dffc6d1a7c7e) Added debug module (@ricardonunesdev)
+- [6015e37](https://github.com/ricardonunesdev/domain-ping/commit/6015e37cda808e7382c0fa5a2727d9221fc1eaa8) Improved promise chain (@ricardonunesdev)
+- [d4a3b52](https://github.com/ricardonunesdev/domain-ping/commit/d4a3b52a3c125098a3b6a2fd8692d45518fbd713) Updated dependencies (@ricardonunesdev)
+- [f100b65](https://github.com/ricardonunesdev/domain-ping/commit/f100b659a65c528b6794dabc9b061ad3e0aa12b6) Added v0.1.8 (@ricardonunesdev)
+
 ### v0.1.8 (2017/09/27 08:52 +00:00)
+- [454c2d2](https://github.com/ricardonunesdev/domain-ping/commit/454c2d27888aaaff5f3d40b6c5f4bfade2fbebf3) Version 0.1.8 - Updated dependencies (@ricardonunesdev)
 - [f6c132e](https://github.com/ricardonunesdev/domain-ping/commit/f6c132e3b0c4ee0053da090db4e0f0702dc0b7fa) Updated request module (@ricardonunesdev)
 - [e894cbf](https://github.com/ricardonunesdev/domain-ping/commit/e894cbf8f7495e5fada2d668863865e698446e5e) Added CHANGELOG (@ricardonunesdev)
 
