@@ -6,7 +6,7 @@
 
 [![Build Status](https://travis-ci.org/ricardonunesdev/domain-ping.svg?branch=master)](https://travis-ci.org/ricardonunesdev/domain-ping)
 [![Coverage Status](https://coveralls.io/repos/github/ricardonunesdev/domain-ping/badge.svg?branch=master)](https://coveralls.io/github/ricardonunesdev/domain-ping?branch=master)
-[![Dependency Status](https://gemnasium.com/badges/github.com/ricardonunesdev/domain-ping.svg)](https://gemnasium.com/github.com/ricardonunesdev/domain-ping)
+[![Known Vulnerabilities](https://snyk.io/test/github/ricardonunesdev/domain-ping/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ricardonunesdev/domain-ping?targetFile=package.json)
 [![npm](https://img.shields.io/npm/v/domain-ping.svg)](https://www.npmjs.com/package/domain-ping)
 [![license](https://img.shields.io/npm/l/domain-ping.svg)](https://github.com/ricardonunesdev/domain-ping/blob/master/LICENSE)
 
