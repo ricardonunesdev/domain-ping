@@ -62,6 +62,7 @@ This example should output an object like this:
 { domain: 'github.com',
   ip: '192.30.253.112',
   ping: true,
+  ping_time: 53.480,
   online: true,
   statusCode: 200,
   success: true }
@@ -72,6 +73,7 @@ Where:
  - `domain` is the domain you requested
  - `ip` is the IP address the domain should be pointing to, as defined in the DNS server by an A record
  - `ping` is true if the server is responding to ping requests, false otherwise (false does not mean it's down, ICMP could be blocked on the server's firewall)
+ - `ping_time` is the average time in ms of the ping requests
  - `online` is true if the server is responding to HTTP requests for the chosen domain, with status code = 200, false otherwise
  - `statusCode` is the actual status code replied by the server in the HTTP request (200, 404, 503, etc)
  - `success` is true if the entire process executed correctly, false otherwise (check Errors below)
