@@ -74,6 +74,8 @@ describe('Testing domain-ping', () => {
                     expect(res).to.have.property('ping');
                     expect(res.ping).to.be.a('boolean');
                     // expect(res.ping).to.be.true; // Travis CI can't ping
+                    expect(res).to.have.property('ping_time');
+                    expect(res.ping_time).to.be.a('number');
                     expect(res).to.have.property('online');
                     expect(res.online).to.be.a('boolean');
                     expect(res.online).to.be.true;
