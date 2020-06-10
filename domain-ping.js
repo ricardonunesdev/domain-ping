@@ -10,6 +10,8 @@ const dns = require('dns');
 const debug = require('debug')('domain-ping');
 const debugErr = require('debug')('domain-ping:error');
 
+const PING_TIMEOUT = 10;
+
 const getDomainIp = (domain) => {
     return new Promise((resolve, reject) => {
         dns.lookup(domain, { family: 4 }, (error, ip, family) => {
@@ -21,11 +23,16 @@ const getDomainIp = (domain) => {
     });
 };
 
-const pingIp = (ip) => {
+const pingIp = (ip, timeout) => {
     return new Promise((resolve, reject) => {
-        ping.sys.probe(ip, (alive) => {
-            return resolve(alive);
-        });
+		ping.promise.probe(ip, { timeout: timeout })
+			.then((res) => {
+				let data = {
+					alive: res.alive,
+					time: parseFloat(res.avg) || null
+				};
+				return resolve(data);
+			});
     });
 };
 
@@ -68,10 +75,11 @@ const domainPing = (domain) => {
         getDomainIp(domain)
             .then((ip) => {
                 data.ip = ip;
-                return pingIp(ip);
+                return pingIp(ip, PING_TIMEOUT);
             })
-            .then((alive) => {
-                data.ping = alive;
+            .then((pingRes) => {
+				data.ping = pingRes.alive || false;
+				if (pingRes.alive) { data.ping_time = pingRes.time; }
                 return requestDomain(domain);
             })
             .then((statusCode) => {
